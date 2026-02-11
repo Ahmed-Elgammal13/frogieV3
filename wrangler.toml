@@ -1,4 +1,4 @@
-name = "frogieV3"
+name = "frogiev3"
 main = "_worker.js"
 compatibility_date = "2026-02-11"
 
