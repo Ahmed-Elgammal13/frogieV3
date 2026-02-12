@@ -3,3 +3,6 @@ main = "_worker.js"
 compatibility_date = "2026-02-11"
 
 assets = { directory = "./static" }
+
+# Required for UV + Bare
+compatibility_flags = ["nodejs_compat"]
