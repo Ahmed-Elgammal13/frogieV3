@@ -6,7 +6,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // Handle Bare proxy requests
+    // Route Bare proxy traffic
     if (bare.shouldRoute(url)) {
       return bare.routeRequest(request);
     }
