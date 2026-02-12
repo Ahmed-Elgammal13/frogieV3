@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@titaniumnetwork-dev/ultraviolet": "^1.0.11",
-    "@tomphttp/bare-server-cloudflare": "latest",
-    "ultraviolet-static": "^1.0.2"
+    "ultraviolet-static": "^1.0.2",
+    "@tomphttp/bare-server-cloudflare": "github:tomphttp/bare-server-cloudflare"
   }
 }
