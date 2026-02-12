@@ -1,12 +1,17 @@
-import { createBareServer } from "@tomphttp/bare-server-node";
+import { createBareServer } from "@tomphttp/bare-server-cloudflare";
+
+const bare = createBareServer();
 
 export default {
   async fetch(request, env, ctx) {
-    // Serve static files
-    try {
-      return await env.ASSETS.fetch(request);
-    } catch (err) {
-      return new Response("Asset not found", { status: 404 });
+    const url = new URL(request.url);
+
+    // Handle Bare proxy requests
+    if (bare.shouldRoute(url)) {
+      return bare.routeRequest(request);
     }
+
+    // Otherwise serve static assets
+    return env.ASSETS.fetch(request);
   }
 };
